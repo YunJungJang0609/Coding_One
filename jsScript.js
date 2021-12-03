@@ -12,7 +12,7 @@ const bigScore = document.querySelector('#bigScore');
 
 
 
-
+//create player
 class Player {
     constructor(x, y, radius, color) {
         this.x = x;
@@ -32,6 +32,9 @@ class Player {
     }
 }
 
+
+
+//create projectile
 class Projectile {
     constructor(x, y, radius, color, velocity) {
         this.x = x;
@@ -56,6 +59,8 @@ class Projectile {
 }
 
 
+
+//create star
 class Star {
     constructor(x, y, spikes, outerRadius, innerRadius, color, velocity){
         this.x = x;
@@ -104,6 +109,10 @@ class Star {
     }
 }
 
+
+
+
+//create particles
 const friction = 0.99;
 
 class Particle {
@@ -138,6 +147,7 @@ class Particle {
 }
 
 
+//initial setting
 const x = canvas.width / 2;
 const y = canvas.height / 2;
 
@@ -148,6 +158,7 @@ let stars = [];
 
 
 
+//this is called to reset the game
 function init(){
     player = new Player(x, y, 10, 'white');
     projectiles = [];
@@ -161,6 +172,9 @@ function init(){
 
 player.draw();
 
+
+
+//keep generate different stars from different places
 function spawnEnemies(){
     setInterval(() => {
         const radius = Math.random() * (30-4) + 4;
@@ -288,7 +302,7 @@ function animate(){
 }
 
 
-
+//when the mouse is clicked
 addEventListener('click', (event) => {
      const angle = Math.atan2(event.clientY - canvas.height/2, event.clientX - canvas.width / 2);
      
@@ -306,7 +320,7 @@ addEventListener('click', (event) => {
 });
 
 
-
+//when the start button is clicked
 startGameBtn.addEventListener('click', () => {
     init();
     animate();
