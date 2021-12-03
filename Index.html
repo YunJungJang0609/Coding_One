@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8 />
+        <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"/>  
+        <link rel="stylesheet" href="stylesheet.css" />
+        <script src = "https://mimicproject.com/libs/nexusUI.js"></script>
+       <script src = "https://mimicproject.com/libs/maximilian.v.0.1.js"></script>
+       <script src = "https://mimicproject.com/libs/maximilian.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="gibber.lib.min.js" type = "text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.0.0" type = "text/javascript"></script>
+    <script src="https://rawgit.com/nexus-js/ui/master/dist/NexusUI.js" type = "text/javascript"></script>
+
+</head>
+
+<body>
+    <div class="score"><span>Score:&nbsp;&nbsp;</span><span id="scoreEl">0</span></div>
+
+    <!-- Maximilian code goes here -->
+  <script id = "myAudioScript">
+
+        var drawOutput = new Array(1024);
+        var counter = 0;
+	    	var maximJs = maximilian();
+        var audio = new maximJs.maxiAudio();      
+      	var myOsc = new maximJs.maxiOsc();
+        var myOsc2 = new maximJs.maxiOsc();
+        var myOsc3 = new maximJs.maxiOsc();
+        var myOsc4 = new maximJs.maxiOsc();
+
+        audio.init();
+
+        var averageOutput = 0;     
+        audio.play = function() {
+
+        counter++;
+            
+        var sum = myOsc.sinewave(100 + myOsc2.sinewave(300) *50) * myOsc3.sinewave(70+ myOsc4.sinewave(70) * 180);          
+        var out = sum * 0.5; 
+          
+            
+        drawOutput[counter % 1024] = out;
+        averageOutput+=out;
+        return out;
+    }
+
+  </script>
+
+    <div class ="container" id="container">
+        <div class='gameOver'>
+            <h1 class="points" id="bigScore">0</h1>
+            <p class="text">Points</p>
+            <div>
+                <button id="startGameBtn">Start Game</button>
+            </div>
+        </div>
+    </div>
+<canvas> </canvas>
+
+
+<script src="./jsScript.js"></script>
+</body>
+</html>

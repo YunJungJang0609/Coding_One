@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+
+.score{
+    position: fixed;
+    font-family: 'Staatliches';
+    color:white;
+    font-size: 25px;
+    margin: 2%;
+    user-select: none;
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    inset: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.gameOver {
+    font-family: 'Staatliches';
+    background-color: white;
+    width: 50%;
+}
+
+.points{
+    size: 6px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.text{
+    size: 4px;
+    color: gray;
+    margin: 0;
+}
+
+button {
+    background-color: transparent;
+    color:black;
+    border:solid black 5px;
+    max-width:250px;
+    padding:10px;
+    margin:10px;
+    font-family: 'Staatliches';
+    font-size: 25px;
+    z-index: 1;
+    position: relative;
+  }
+  
+  button:hover {
+    background-color: transparent;
+    color:grey;
+    border:solid grey 5px;
+  }
