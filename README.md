@@ -56,5 +56,7 @@ I planned to put a storyline and more functions in the game, however, it was dif
 ## Links
 
 This is the html code: (https://github.com/YunJungJang0609/Coding_One/blob/main/Index.html)
+
 This is the javascript code: (https://github.com/YunJungJang0609/Coding_One/blob/main/jsScript.js)
+
 This is the css code: (https://github.com/YunJungJang0609/Coding_One/blob/main/stylesheet.css)
